@@ -1,10 +1,10 @@
   <?php
- //   session_start();
-    // Se não estiver logado, volta para login
-  //  if (!isset($_SESSION['usuario'])) {
-   //     header("Location: login.php");
-   //     exit;
-    //}
+    session_start();
+     Se não estiver logado, volta para login
+     if (!isset($_SESSION['usuario'])) {
+        header("Location: login.php");
+       exit;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
