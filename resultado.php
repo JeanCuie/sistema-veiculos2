@@ -31,6 +31,8 @@ $result = $conn->query($sql);
                 <li><strong>Modelo:</strong> <?php echo htmlspecialchars($row['modelo']); ?></li>
                 <li><strong>Cor:</strong> <?php echo htmlspecialchars($row['cor']); ?></li>
                 <li><strong>Responsável:</strong> <?php echo htmlspecialchars($row['responsavel']); ?></li>
+                <li><strong>Telefone:</strong> <?php echo htmlspecialchars($row['telefone']); ?></li>
+                <li><strong>Registro:</strong> <?php echo htmlspecialchars($row['registro']); ?></li
             </ul>
             <?php
         } else {

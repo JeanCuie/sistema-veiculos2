@@ -27,8 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $tipoMensagem = "error";
     } else {
         // Insere novo veículo
-        $stmtInsert = $conn->prepare("INSERT INTO veiculos (placa, modelo, cor, responsavel) VALUES (?, ?, ?, ?)");
-        $stmtInsert->bind_param("ssss", $placa, $modelo, $cor, $responsavel);
+        $stmtInsert = $conn->prepare("INSERT INTO veiculos (placa, modelo, cor, responsavel, telefone, registro) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmtInsert->bind_param("ssssss", $placa, $modelo, $cor, $responsavel, $telefone, $registro);
 
         if ($stmtInsert->execute()) {
             $mensagem = "✅ Veículo cadastrado com sucesso!";
@@ -86,6 +86,14 @@ $conn->close();
           <div class="w-full">
               <label for="cor" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cor</label>
               <input type="text" name="cor" id="cor" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Cor do Veículo" required>
+          </div>
+          <div class="w-full">
+              <label for="registro" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Registro</label>
+              <input type="text" name="registro" id="registro" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="R.A ou Matricula de Professor" required>
+          </div>
+          <div class="w-full">
+              <label for="telefone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Telefone</label>
+              <input type="text" name="telefone" id="telefone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="(99)9999-9999" required>
           </div>
       </div>
 
